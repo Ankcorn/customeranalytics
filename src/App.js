@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Header, Filters, User } from './components' 
-import { FilterHeader } from './components/filters'
+import { Header, Filters, User } from './components'
+import FilterOptions, { FilterHeader } from './components/filters'
 import Table from './components/tableComponents/table';
 
 import data from './data/generate';
@@ -16,10 +16,11 @@ class App extends Component {
           <User />
         </Header>
         <div className="content">
-        <Filters>
-          <FilterHeader>Filters</FilterHeader>
-        </Filters>
-        <Table tabledata={Array(6).fill(null)}/>
+          <Filters>
+            <FilterHeader>Filters</FilterHeader>
+            <FilterOptions />
+          </Filters>
+          <Table tabledata={Array(6).fill(null)} />
         </div>
       </div>
     );
