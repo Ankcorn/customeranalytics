@@ -26,13 +26,3 @@ export const Filters = styled.div`
     box-shadow: 5px 10px 8px 10px #888888; 
     background-color: LightSteelBlue 
 `
-
-export const Table = styled.div`
-    border-radius: 20px;
-    width: 900px;
-    height: 700px;
-    box-shadow: 5px 10px 8px 10px #888888; 
-    background-color: #222;
-    position: relative;
-    z-index: 4;
-`
