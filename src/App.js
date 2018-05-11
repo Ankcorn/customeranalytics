@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import {Header, Filters, User } from './components' 
+import { FilterHeader } from './components/filters'
+import Table from './components/tableComponents/table';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header className="header">
+          <h1>Customer Analytics</h1>
+          <User />
+        </Header>
+        <div className="content">
+        <Filters>
+          <FilterHeader>Filters</FilterHeader>
+        </Filters>
+        <Table tabledata={Array(6).fill(null)}/>
+        </div>
       </div>
     );
   }
