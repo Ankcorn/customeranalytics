@@ -24,5 +24,6 @@ export const Filters = styled.div`
     width: 300px;
     height: 700px;
     box-shadow: 5px 10px 8px 10px #888888; 
-    background-color: LightSteelBlue 
+    background-color: LightSteelBlue;
+    position: fixed;
 `
