@@ -5,6 +5,9 @@ export const FilterHeader = styled.h3`
     text-decoration: underline;
 `
 export default class FilterOptions extends React.Component {
+    state = {
+        filter: ''
+    }
     render()
     {
         return (

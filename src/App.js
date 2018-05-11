@@ -13,7 +13,16 @@ console.table(enrichedData);
 
 class App extends Component {
   state = {
-    data: enrichedData
+    data: enrichedData,
+    filterParam: '',
+    filterValue: ''
+  }
+
+  changeFilter(param, value) {
+    this.setState({
+      filterParam: param,
+      filterValue: value
+    })
   }
   render() {
     return (
@@ -23,7 +32,7 @@ class App extends Component {
           <User />
         </Header>
         <div className="content">
-          <Filters>
+          <Filters change={this.changeFilter}>
             <FilterHeader>Filters</FilterHeader>
             <FilterOptions />
           </Filters>
