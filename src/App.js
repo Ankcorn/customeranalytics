@@ -4,6 +4,9 @@ import './App.css';
 import {Header, Filters, User } from './components' 
 import { FilterHeader } from './components/filters'
 import Table from './components/tableComponents/table';
+
+import data from './data/generate';
+console.log(data);
 class App extends Component {
   render() {
     return (
