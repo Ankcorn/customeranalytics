@@ -14,16 +14,34 @@ console.table(enrichedData);
 class App extends Component {
   state = {
     data: enrichedData,
-    filterParam: '',
-    filterValue: ''
   }
 
-  changeFilter(param, value) {
-    this.setState({
-      filterParam: param,
-      filterValue: value
-    })
+  changeFilter = (param, value, money) => {
+    console.log(param, value, money)
+
+    if(param==='priority' && money){
+      this.setState({
+        data: this.state.data.map(el=> {
+            return { ...el, score: net.run(el.model.input.bank_bal).interesting }
+          }).filter(
+            el=>value === 'Red' ? 
+            Math.floor(el.score*100) > 66 : value === 'Orange' ? 
+            Math.floor(el.score*100) > 33 && Math.floor(el.score*100) < 67 : 
+            Math.floor(el.score*100) < 33)
+      })
+    } else if (money) {
+      this.setState({
+        data: this.state.data.map(el=> {
+          return { ...el, score: net.run(el.model.input.bank_bal).interesting }
+        })
+      })
+    } else {
+      this.setState({
+        data: enrichedData
+      })
+    }
   }
+
   render() {
     return (
       <div className="App">
@@ -32,9 +50,9 @@ class App extends Component {
           <User />
         </Header>
         <div className="content">
-          <Filters change={this.changeFilter}>
+          <Filters >
             <FilterHeader>Filters</FilterHeader>
-            <FilterOptions />
+            <FilterOptions changeFilter={this.changeFilter}/>
           </Filters>
           <Table tabledata={this.state.data} />
         </div>
