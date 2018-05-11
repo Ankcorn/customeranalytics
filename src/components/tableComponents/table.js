@@ -26,7 +26,7 @@ export const TableRowStyle = styled.div`
 
 const TableRow = (customer) => (
     <div className="table-row">
-        <div>{customer.customer.name}</div>
+        <div><a href="http://bbc.co.uk">{customer.customer.name}</a></div>
         <div>{customer.customer.email}</div>
         <div>{Math.floor(customer.customer.score*100)}</div>
     </div>
