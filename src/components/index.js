@@ -21,10 +21,10 @@ export const User = styled.div`
 `
 export const Filters = styled.div`
     border-radius: 20px;
-    width: 200px;
+    width: 300px;
     height: 700px;
     box-shadow: 5px 10px 8px 10px #888888; 
-    background-color: #222
+    background-color: LightSteelBlue 
 `
 
 export const Table = styled.div`

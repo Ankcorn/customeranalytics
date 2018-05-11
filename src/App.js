@@ -11,7 +11,9 @@ class App extends Component {
           <User />
         </Header>
         <div className="content">
-        <Filters className="filters"/>
+        <Filters className="filters">
+          
+        </Filters>
         <Table className="table"/>
         </div>
       </div>
