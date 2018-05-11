@@ -2,20 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Header = styled.div`
-    background-color: Aquamarine;
+    background-color: #ff6666;
     height: 60px;
     padding: 20px;
     color: white;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 `
 export const User = styled.div`
     height: 60px;
     width: 60px;
     background-image: url("http://en.tintin.com/images/tintin/persos/images/milou.png");
-    border-radius: 50%;
+    background-color:orange;
+    border-radius: 60%;
     background-size: 100% 100%;
     border: solid 1px #222;
 `
