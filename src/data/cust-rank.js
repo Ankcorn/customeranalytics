@@ -1,4 +1,4 @@
-const brain = require('brain.js');
+import brain from 'brain.js';
 import trainingData from './trainingdata';
 /*
 data cols

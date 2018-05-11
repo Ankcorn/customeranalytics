@@ -4,10 +4,17 @@ import './App.css';
 import { Header, Filters, User } from './components'
 import FilterOptions, { FilterHeader } from './components/filters'
 import Table from './components/tableComponents/table';
-
+import net from './data/cust-rank';
 import data from './data/generate';
-console.log(data);
+const enrichedData = data.map(el=> {
+  return { ...el, score: net.run(el.model.input).interesting }
+});
+console.table(enrichedData);
+
 class App extends Component {
+  state = {
+    data: enrichedData
+  }
   render() {
     return (
       <div className="App">
@@ -20,7 +27,7 @@ class App extends Component {
             <FilterHeader>Filters</FilterHeader>
             <FilterOptions />
           </Filters>
-          <Table tabledata={Array(6).fill(null)} />
+          <Table tabledata={this.state.data} />
         </div>
       </div>
     );

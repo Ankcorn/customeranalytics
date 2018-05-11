@@ -4,7 +4,7 @@ const data = Array(20).fill(null).map(el=>({
     name: faker.name.findName(), 
     email: faker.internet.email(), 
     bitcoinAddress: faker.finance.bitcoinAddress(), 
-    age: faker.random.number(100),
+    age: faker.random.number({min:18, max:100}),
     model: { input: { 
         bank_bal: faker.random.number(100)/100, 
         num_purc: faker.random.number(100)/100, 
